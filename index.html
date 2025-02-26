@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>The MagiScript Library</title>
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- lagt tiljQuery fra CDN -->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body class="library">
+
+<h1>
+    Welcome to The MagiScript Library of Mexyll the Magnificent
+</h1>
+
+<div class="book-view-container">
+    <div id="book-view" class="hidden">
+        <button id="close-tome">Close Tome</button>
+
+        <!-- Change Password Book -->
+
+
+        <div class="spell-page hidden" id="change-password-book">
+            <div class="page-left">
+                <img src="resources/spellPages/witchPassword.webp" alt="witch and padlock">
+            </div>
+
+            <form id="change-password-form">
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="password" id="new-password" placeholder="New Password" required>
+                <input type="password" id="confirm-password" placeholder="Confirm Password" required>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+        <!-- Change Name Book -->
+
+
+        <div class="spell-page hidden" id="change-name-book">
+            <div class="page-left">
+                <img src="resources/spellPages/renameWizard.webp" alt="wizard looking in mirror">
+            </div>
+
+            <div class="page-right">
+                This spell weaves the ancient magic of names and identity, allowing the caster to shed old titles and
+                embrace a new persona. The incantation should be spoken with a clear vision of the new name and its
+                attributes, marking a rebirth of self in the mystic realms.
+                You should henceforth be known as
+
+                <form id="rename-wizard-form">
+                    <input type="text" id="new-name" placeholder="New Name" required>
+                    <input type="text" id="new-title" placeholder="New Title" required>
+                    <button type="submit">Submit</button>
+
+                </form>
+            </div>
+        </div>
+
+        <!-- Summon Familiar Book -->
+
+
+
+        <div class="spell-page hidden" id="summon-familiar-book">
+            <div class="page-left">
+                <img src="resources/spellPages/angryLlama.webp" alt="angry two-headed llama breathing fire">
+            </div>
+
+            <div class="page-right">
+                <form id="summon-form">
+                    <label for="familiar-name">Familiar Name:</label>
+                    <input type="text" id="familiar-name" required>
+
+                    <label for="familiar-type">Base Type: </label>
+                    <input type="text" id="familiar-type" required>
+
+                    <label>
+                        <input type="checkbox" id="has-wings" onchange="toggleWingType()">
+                        Has Wings
+                    </label>
+
+
+                    <div id="wing-type-container" class="hidden">
+                        <label for="wing-type">Wing Type:</label>
+                        <input type="text" id="wing-type" placeholder="e.g., Dragon, Fairy, Bat, etc.">
+                    </div>
+
+                    <label>Traits (Select all that apply):</label>
+                    <div>
+                        <label><input type="checkbox" class="traits" value="Levitating"> Levitating</label><br>
+                        <label><input type="checkbox" class="traits" value="Extra Head"> Extra Head</label><br>
+                        <label><input type="checkbox" class="traits" value="Fire Breath"> Fire Breath</label>
+                    </div>
+
+
+
+                    <label for="familiar-mood">
+                        Mood: <strong id="mood-text">Neutral</strong>
+                    </label>
+                    <input type="range" id="familiar-mood" min="0" max="10" step="1">
+
+
+
+
+                    <label for="contract-end">Contract End (Date):</label>
+                    <input type="date" id="contract-end" required>
+
+                    <button type="submit">Summon Familiar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<p>Explore the magic within books...</p>
+
+<!-- Book Covers -->
+
+
+<div class="books-container">
+    <div class="book" id="change-password-book-cover">
+        <h2>The Arcanum of Archmage Arlo the Apathetic</h2>
+        <img src="resources/books/arcanum.webp" alt="Cover of Arcanum of Archmage Arlo the Apathetic">
+    </div>
+    <div class="book" id="change-name-book-cover">
+        <h2>Professor Noodlewhisker the Unpronounceable's Nomen Novum</h2>
+        <img src="resources/books/nomenNovum.webp" alt="Cover of Professor Noodlewhisker the Unpronounceable's Nomen Novum">
+    </div>
+    <div class="book" id="summon-familiar-book-cover">
+        <h2>Mexyll the Magnificent’s Mystical Manuscripts of Summon Familiar</h2>
+        <img src="resources/books/manuscript.webp" alt="Cover of Mystical Manuscripts of Summon Familiar">
+    </div>
+</div>
+
+<!-- Familiar Display in Top-Right Corner -->
+
+
+<div id="familiar-display" class="hidden">
+    <img id="familiar-image" src="" alt="Familiar Image">
+    <p id="familiar-description"></p>
+</div>
+
+</body>
+</html>
