@@ -108,25 +108,5 @@ function handleSummonFamiliar(event) {
    const description = `You have summoned: ${name}, a ${type} with ${wingType}. Traits: ${traits}. Mood: ${mood}. Contract ends on: ${contractEnd}`;
    alert(description);
 
-   // Image logic
-
-
-   let familiarImageSrc = "";
-   switch (type.toLowerCase()) {
-      case "llama":
-         familiarImageSrc = "resources/familiars/llama.jpg";
-         break;
-      case "cat":
-         familiarImageSrc = "resources/familiars/cat.jpg";
-         break;
-      case "dragon":
-         familiarImageSrc = "resources/familiars/dragon.jpg";
-         break;
-      default:
-         familiarImageSrc = "resources/familiars/default.jpg";
-   }
-
-   document.getElementById("familiar-image").src = familiarImageSrc;
-   document.getElementById("familiar-description").innerText = description;
-   document.getElementById("familiar-display").classList.remove("hidden");
+   
 }
